@@ -1,0 +1,5 @@
+{
+  "class_indices": {"cocci": 0, "healthy": 1, "ncd": 2, "salmo": 3},
+  "idx_to_display": {"0": "coccidiosis", "1": "healthy", "2": "ncd", "3": "salmonella"},
+  "model_version": "v1"
+}

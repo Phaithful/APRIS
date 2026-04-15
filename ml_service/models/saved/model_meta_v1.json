@@ -1,0 +1,59 @@
+{
+  "feature_names": [
+    "temperature_c",
+    "humidity_pct",
+    "rainfall_mm",
+    "flock_age_weeks",
+    "flock_size",
+    "vaccinated",
+    "nearby_outbreak",
+    "wild_bird_proximity",
+    "mortality_rate_pct",
+    "feed_intake_pct",
+    "season_dry",
+    "season_harmattan",
+    "season_wet",
+    "region_north",
+    "region_south_east",
+    "region_south_south",
+    "region_south_west",
+    "housing_type_battery_cage",
+    "housing_type_closed",
+    "housing_type_open_sided"
+  ],
+  "numeric_cols": [
+    "temperature_c",
+    "humidity_pct",
+    "rainfall_mm",
+    "flock_age_weeks",
+    "flock_size",
+    "vaccinated",
+    "nearby_outbreak",
+    "wild_bird_proximity",
+    "mortality_rate_pct",
+    "feed_intake_pct"
+  ],
+  "categorical_nominal": [
+    "season",
+    "region",
+    "housing_type"
+  ],
+  "risk_classes": [
+    "critical",
+    "high",
+    "low",
+    "medium"
+  ],
+  "disease_classes": [
+    "Avian Influenza",
+    "Coccidiosis",
+    "Fowl Pox",
+    "Fowl Typhoid",
+    "Gumboro Disease",
+    "Heat Stress Syndrome",
+    "Infectious Bronchitis",
+    "Marek's Disease",
+    "Newcastle Disease"
+  ],
+  "model_version": "v1"
+}
