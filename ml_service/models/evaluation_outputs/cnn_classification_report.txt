@@ -1,0 +1,15 @@
+APRIS CNN MobileNetV2 — Evaluation Report
+Test images : 2959  (20% validation split)
+Accuracy    : 0.9875   Macro F1 : 0.9429
+
+Classification Report:
+                   precision    recall  f1-score   support
+
+      Coccidiosis       1.00      0.97      0.98       420
+          Healthy       1.00      1.00      1.00      2009
+Newcastle Disease       0.77      0.87      0.82        75
+       Salmonella       0.98      0.97      0.97       455
+
+         accuracy                           0.99      2959
+        macro avg       0.94      0.95      0.94      2959
+     weighted avg       0.99      0.99      0.99      2959

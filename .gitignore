@@ -16,8 +16,6 @@ frontend/dist-ssr/
 # ========================
 # Environment variables (secrets)
 # ========================
-.env
-.env.local
 .env.*.local
 
 # ========================
@@ -59,7 +57,6 @@ salmo/
 # ========================
 # Editor & OS
 # ========================
-.vscode/*
 !.vscode/extensions.json
 .idea/
 .DS_Store
@@ -75,3 +72,7 @@ Thumbs.db
 # ========================
 logs/
 *.log
+branch_structure.json
+temp_auto_push.bat
+temp_interactive_push.bat
+config.bat
