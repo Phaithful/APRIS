@@ -94,16 +94,7 @@ export default function AdminPanel() {
                   <td className="py-3 font-medium">{u.name}</td>
                   <td className="py-3 text-[#6B7280]">{u.email}</td>
                   <td className="py-3">
-                    <select
-                      value={u.role}
-                      disabled={saving[u.id]}
-                      onChange={e => updateUser(u.id, 'role', e.target.value)}
-                      className="border border-[#E5E7EB] rounded-lg px-2 py-1 text-sm text-[#1A2332] focus:outline-none focus:border-[#2E7D52]"
-                    >
-                      <option value="farmer">Farmer</option>
-                      <option value="vet">Vet</option>
-                      <option value="admin">Admin</option>
-                    </select>
+                    <span className="capitalize text-sm text-[#1A2332]">{u.role}</span>
                   </td>
                   <td className="py-3">
                     <button

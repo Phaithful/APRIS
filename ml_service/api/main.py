@@ -27,12 +27,12 @@ _models: Dict[str, Any] = {}
 def load_models():
     """Load all model artefacts at startup."""
     print("Loading XGBoost models...")
-    _models["risk_model"] = joblib.load(SAVE_DIR / "xgboost_risk_v1.pkl")
-    _models["disease_model"] = joblib.load(SAVE_DIR / "xgboost_disease_v1.pkl")
-    _models["scaler"] = joblib.load(SAVE_DIR / "scaler_v1.pkl")
-    _models["encoders"] = joblib.load(SAVE_DIR / "encoders_v1.pkl")
+    _models["risk_model"] = joblib.load(SAVE_DIR / "xgboost_risk_v2.pkl")
+    _models["disease_model"] = joblib.load(SAVE_DIR / "xgboost_disease_v2.pkl")
+    _models["scaler"] = joblib.load(SAVE_DIR / "scaler_v2.pkl")
+    _models["encoders"] = joblib.load(SAVE_DIR / "encoders_v2.pkl")
 
-    with open(SAVE_DIR / "model_meta_v1.json") as f:
+    with open(SAVE_DIR / "model_meta_v2.json") as f:
         _models["meta"] = json.load(f)
 
     # Accept either the final saved model or the best checkpoint saved during training
@@ -89,7 +89,8 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(
-    title="APRIS ML Microservice",
+    title="APR" \
+    "\IS ML Microservice",
     description="XGBoost risk prediction and CNN dropping image classification",
     version="1.0.0",
     lifespan=lifespan,

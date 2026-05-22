@@ -1,0 +1,15 @@
+APRIS XGBoost Risk Classifier — Evaluation Report
+Test set  : 6300 records  (80/20 stratified split, random_state=42)
+Accuracy  : 0.8168   Macro F1 : 0.7908
+
+Classification Report:
+              precision    recall  f1-score   support
+
+    Critical       0.78      0.94      0.85       979
+        High       0.90      0.81      0.85      3242
+         Low       0.56      0.94      0.70       218
+      Medium       0.76      0.75      0.76      1861
+
+    accuracy                           0.82      6300
+   macro avg       0.75      0.86      0.79      6300
+weighted avg       0.83      0.82      0.82      6300
