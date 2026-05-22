@@ -299,24 +299,23 @@ def _load_cnn_model(path):
     """
     Load a Keras model with a compatibility shim for MobileNetV2 checkpoints
     that still carry the deprecated BatchNormalization 'renorm' keys.
-    This mirrors the same patch applied in ml_service/api/main.py.
+    Patches __init__ rather than from_config for Keras 3.x compatibility.
     """
     import tensorflow as tf
     import keras
 
-    orig_from_config = keras.layers.BatchNormalization.from_config
+    orig_init = keras.layers.BatchNormalization.__init__
 
-    @classmethod  # type: ignore[misc]
-    def _compat_from_config(cls, config):
+    def _patched_init(self, *args, **kwargs):
         for key in ("renorm", "renorm_clipping", "renorm_momentum"):
-            config.pop(key, None)
-        return orig_from_config.__func__(cls, config)
+            kwargs.pop(key, None)
+        orig_init(self, *args, **kwargs)
 
-    keras.layers.BatchNormalization.from_config = _compat_from_config
+    keras.layers.BatchNormalization.__init__ = _patched_init
     try:
         model = tf.keras.models.load_model(str(path), compile=False)
     finally:
-        keras.layers.BatchNormalization.from_config = orig_from_config
+        keras.layers.BatchNormalization.__init__ = orig_init
 
     return model
 
